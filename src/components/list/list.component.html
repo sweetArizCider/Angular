@@ -1,0 +1,49 @@
+<main-card-selector
+  [dimensions]="{
+    width: '25rem',
+    height: 'auto'
+  }"
+>
+  <section class="header">
+    <h2>List of People</h2>
+  </section>
+
+  <section class="list-container">
+    @for (item of list; track item) {
+      <section class="list-container">
+        <article 
+          class="list-item"
+        >
+          <p>
+            <span class="bold">
+              Name: 
+            </span>
+            {{ item.name }}<br>
+          </p>
+          <p>
+            <span class="bold">
+              Last Name: 
+            </span>
+            {{ item.lastName }}<br>
+          </p>
+          <p>
+            <span class="bold">
+              Favorite Color: 
+            </span>
+            {{ item.favoriteColor }}<br>
+          </p>
+        </article>
+      </section>
+    }@empty {
+      <section class="list-container">
+        <article 
+          class="list-item"
+        >
+          <p class="bold">
+            No items found.
+          </p>
+        </article>
+      </section>
+    }
+  </section>
+</main-card-selector>

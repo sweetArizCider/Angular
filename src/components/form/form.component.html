@@ -1,0 +1,44 @@
+
+<main-card-selector 
+  [dimensions]="{ 
+    width: '25rem', 
+    height: 'auto'
+  }"
+>
+  <section class="main-input-container">
+    <label for="name">Name: </label>
+
+    <article class="second-input-container">
+      <app-input
+        
+      ></app-input>
+    </article>
+  </section>
+
+  <section class="main-input-container">
+    <label for="lastName">Last Name: </label>
+
+    <article class="second-input-container">
+      <app-input
+       
+      ></app-input>
+    </article>
+  </section>
+
+  <section class="main-input-container">
+    <label for="favoriteColor">Favorite Color: </label>
+
+    <article class="second-input-container">
+      <app-input
+       
+      ></app-input>
+    </article>
+  </section>
+
+  <section class="button-container">
+    <button-selector
+      [label]= "'Submit'"
+    ></button-selector>
+  </section>
+</main-card-selector>
+
