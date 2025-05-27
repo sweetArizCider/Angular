@@ -1,6 +1,4 @@
-import { Component, EventEmitter, Input, Output} from '@angular/core';
-import { ListComponent } from '../../components/list/list.component';
-import { Item } from '../../types';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'button-selector',
@@ -8,7 +6,11 @@ import { Item } from '../../types';
   styleUrls: ['./button.component.css'],
   standalone: true,
 })
-
 export class ButtonComponent {
-  @Input() label: string = 'Hi :)'
+  @Input() label: string = 'Button';
+  @Output() action = new EventEmitter<void>();
+
+  onClick() {
+    this.action.emit();
+  }
 }

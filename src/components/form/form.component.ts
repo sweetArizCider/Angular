@@ -1,37 +1,38 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { Item } from '../../types';
 import { InputComponent } from '../../layout/inputs/input.component';
-import { MainCardComponent } from '../../layout/cards/mainCard.component';
 import { ButtonComponent } from '../../layout/buttons/button.component';
-import { type Item } from '../../types';
+import { MainCardComponent } from '../../layout/cards/mainCard.component'; 
 
 @Component({
   selector: 'form-selector',
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.css'],
-  imports: [
-    ReactiveFormsModule,
-    CommonModule,
-    InputComponent,
-    MainCardComponent,
-    ButtonComponent,
-  ],
   standalone: true,
+  imports: [
+    FormsModule,
+    InputComponent,
+    ButtonComponent,
+    MainCardComponent
+  ]
 })
 export class FormComponent {
-  @Output() itemCreated = new EventEmitter<Item>();
+  @Output() addItem = new EventEmitter<Item>();
 
-  form = new FormGroup({
-    name: new FormControl(''),
-    lastName: new FormControl(''),
-    favoriteColor: new FormControl(''),
-  });
+  formData: Item = {
+    name: '',
+    lastName: '',
+    favoriteColor: ''
+  };
 
-  submitForm() {
-    if (this.form.valid) {
-      this.itemCreated.emit(this.form.value as Item);
-      this.form.reset(); // Clear the form after submission
+  onSubmit(){
+    if (this.formData.name && 
+        this.formData.lastName && 
+        this.formData.favoriteColor
+      ){
+      this.addItem.emit({ ...this.formData });
+      this.formData = { name: '', lastName: '', favoriteColor: '' };
     }
   }
 }

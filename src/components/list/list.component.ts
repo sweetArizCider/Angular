@@ -12,9 +12,5 @@ import { Item } from '../../types';
   standalone: true,
 })
 export class ListComponent {
-  @Input() list: Item[] = [{
-    name: 'hola',
-    lastName: 'mundo',
-    favoriteColor: 'red',
-  }];
+  @Input() list: Item[] = []; 
 }

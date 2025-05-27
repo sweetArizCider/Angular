@@ -5,14 +5,18 @@ import { Item } from '../../types';
 
 @Component({
   selector: 'home-selector',
-  templateUrl: '../../views/home/home.component.html',
-  styleUrl: './home.component.css',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css'],
+  standalone: true,
   imports: [
-    FormComponent, 
+    FormComponent,
     ListComponent
   ],
 })
-export class AppComponent {
+export class HomeComponent {
+  itemList: Item[] = [];
 
-
+  handleAddItem(newItem: Item) {
+    this.itemList = [...this.itemList, newItem];
+  }
 }

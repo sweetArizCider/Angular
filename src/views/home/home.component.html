@@ -1,4 +1,9 @@
 <main class="main-content">
-  <form-selector></form-selector>
-  <list-selector></list-selector>
+  <form-selector 
+    (addItem)="handleAddItem($event)"
+  ></form-selector>
+  
+  <list-selector 
+    [list]="itemList"
+  ></list-selector>
 </main>
