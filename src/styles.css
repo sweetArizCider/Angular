@@ -7,14 +7,13 @@
 }
 
 body{
-  background: linear-gradient(
-    180deg,
-    #c7d7d9,
-    #b0cfe1
-  );  
+  background-color: #fffafa;  
 }
 
 .bold{
   font-weight: bold;
 }
 
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

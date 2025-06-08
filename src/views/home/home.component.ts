@@ -13,6 +13,8 @@ import { Item } from '../../types';
     ListComponent
   ],
 })
+
+
 export class HomeComponent {
   itemList: Item[] = [];
 

@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { MainCardComponent } from '../../layout/cards/mainCard.component';
-import { Item } from '../../types';
+import { Item } from '../../models/itemModel';
 
 @Component({
   selector: 'list-selector',

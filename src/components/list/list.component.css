@@ -33,6 +33,7 @@
   height: auto;
   padding-bottom: 1rem;
   border-bottom: 4px solid #ffffff99;
+  border-radius: .8px;
 }
 
 .list-item p{

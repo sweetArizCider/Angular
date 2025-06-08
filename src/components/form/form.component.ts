@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Item } from '../../types';
+import { Item } from '../../models/itemModel';
 import { InputComponent } from '../../layout/inputs/input.component';
 import { ButtonComponent } from '../../layout/buttons/button.component';
 import { MainCardComponent } from '../../layout/cards/mainCard.component'; 
@@ -17,6 +17,7 @@ import { MainCardComponent } from '../../layout/cards/mainCard.component';
     MainCardComponent
   ]
 })
+
 export class FormComponent {
   @Output() addItem = new EventEmitter<Item>();
 
